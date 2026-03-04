@@ -1,8 +1,0 @@
-export default function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-      <p>This website was created for our Computer Networks Project.</p>
-    </div>
-  );
-}
