@@ -4,8 +4,10 @@ export default function Home() {
       <h1>Welcome to Our Website</h1>
 
       <div className="card">
-        <h2>Project Goal</h2>
-        <p>This website was created for our Computer Networks Project.</p>
+        {/* <h2>Project Goal</h2> */}
+        <p>Computer Networks Project 1</p>
+        <p>Team: Asha Iman & Hania Zaidi</p>
+
       </div>
     </main>
   );

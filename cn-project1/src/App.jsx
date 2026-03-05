@@ -6,7 +6,7 @@ export default function App() {
   return (
     <HashRouter>
       <header className="landing-header" role="banner">
-        <h1 className="landing-title">xyz</h1>
+        <h1 className="landing-title">CSC: 4220</h1>
 
         <nav role="navigation">
           <ul className="landing-nav-list">
