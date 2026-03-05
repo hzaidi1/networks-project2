@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import nslookupImage from "../assets/nslookup.jpg";
 
 export default function Networking() {
   const [ipv4, setIpv4] = useState("Loading...");
@@ -29,7 +30,7 @@ export default function Networking() {
         <h2>DNS</h2>
         <p>Our domain, hzaidi1.github.io, uses DNS to link the domain name into a machine readable IP address so the browser can locate the server.</p>
         <p>As shown below, the nslookup command shows our domain points to Github Pages.</p>
-        <img src="nslookup.jpg" alt="DNS Lookup Evidence" style="width: 100%; border-radius: 8px; margin-top: 10px;" />
+        <img src={nslookupImage} alt="DNS Lookup Evidence" style={{ width: "100%", borderRadius: "8px", marginTop: "10px" }} />
         <p>This allows the public to access the site using a name instead of a numeric IP address.</p>
       </div>
 
