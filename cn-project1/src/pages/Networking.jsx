@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import nslookupImage from "../assets/nslookup.jpg";
+import headersImage from "../assets/headers.jpg";
 
 export default function Networking() {
   const [ipv4, setIpv4] = useState("Loading...");
@@ -48,6 +49,7 @@ export default function Networking() {
       <div className="card">
         <h2>Protocols (HTTP vs HTTPS)</h2>
         <p>This site enforces HTTPS, ensuring that data is encrypted during transit. This uses the TCP/IP protocol for reliable delivery.</p>
+        <img src={headersImage} alt="HTTP Headers Evidence" style={{ width: "100%", borderRadius: "8px", marginTop: "10px" }} />
       </div>
     </main>
   );
