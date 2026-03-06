@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Project1 - Networking Concepts</title>
+</head>
+
+<body>
+    <header class="landing-header" role="banner">
+        <h1 class="landing-title">xyz</h1>
+        <nav class="landing-nav" role="navigation">
+            <ul class="landing-nav-list">
+                <li class="landing-nav-item"><a href="index.html">Home</a></li>
+                <li class="landing-nav-item"><a href="networking.html">Networking Concepts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="landing-page" role="main">
+        <section class="section">
+            <h1 class="section-title">Networking Concepts</h1>
+            <p class="section-subtitle">This page demonstrates how networking concepts are applied to our website deployment.</p>
+
+            <div class="card">
+                <h3>DNS</h3>
+                <p>Our website uses DNS to link the domain name into a machine readable IP address so the browser can locate the server.</p>
+            </div>
+
+            <div class="card">
+                <h3>IP Addressing</h3>
+                <p>We identified the following public IP address:</p>
+                <p>Detected IP: <span id="ip-address">Loading...</span></p>
+                <p>This address allows for end-to-end communication across the internet.</p>
+            </div>
+
+            <div class="card">
+                <h3>Protocols (HTTP vs HTTPS)</h3>
+                <p>This site enforces HTTPS, ensuring that data is encrypted during transit. This uses the TCP/IP protocol for reliable delivery.</p>
+                <button id="check-status">Check Header Status</button>
+                <p id="status-display"></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body> 
+</html>
