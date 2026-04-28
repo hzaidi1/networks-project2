@@ -33,7 +33,7 @@ export default function Networking() {
         <p> When a user types the domain into their browser, a DNS lookup is performed. The browser contacts a DNS resolver which then finds the IP address for our domain. GitHub Pages registers
           the domain and points to their servers. The resolver then returns an IP address and the browser uses that IP address to connect to the server and load our site.</p>
         <p>As shown below, the nslookup command shows our domain points to Github Pages.</p>
-        <img src={nslookupImage} alt="DNS Lookup Evidence" style={{ width: "100%", borderRadius: "8px", marginTop: "10px" }} />
+        <img src={nslookupImage} alt="DNS Lookup Evidence" loading="lazy" decoding="async" style={{ width: "100%", borderRadius: "8px", marginTop: "10px" }} />
         <p>This allows the public to access the site using a name instead of a numeric IP address.</p>
       </div>
 
@@ -55,7 +55,7 @@ export default function Networking() {
         <p>As shown below, the HTTP headers confirm that HTTPS is being used and that the connection is secure. 
           The <strong>Strict-Transport-Security</strong> header enforces HTTPS by telling the browser to only use HTTPS for future
           requests and use an encrypted connection. The status code 200 OK confirms the server successfully returned the page. </p>
-        <img src={headersImage} alt="HTTP Headers Evidence" style={{ width: "100%", borderRadius: "8px", marginTop: "10px" }} />
+        <img src={headersImage} alt="HTTP Headers Evidence" loading="lazy" decoding="async" style={{ width: "100%", borderRadius: "8px", marginTop: "10px" }} />
       </div>
     </main>
   );

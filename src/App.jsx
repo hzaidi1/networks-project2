@@ -1,10 +1,11 @@
-import { HashRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { Analytics } from "@vercel/analytics/react";
 import Home from "./pages/Home";
 import Networking from "./pages/Networking";
 
 export default function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <header className="landing-header" role="banner">
         <h1 className="landing-title">CSC: 4220</h1>
 
@@ -24,6 +25,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/networking" element={<Networking />} />
       </Routes>
-    </HashRouter>
+    <Analytics />
+    </BrowserRouter>
   );
 }
