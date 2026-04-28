@@ -10,6 +10,8 @@ export default async function handler(req, res) {
 
   const { email, password } = req.body || {};
 
+  console.log('DEBUG body:', JSON.stringify(req.body), 'email:', JSON.stringify(email), 'password:', JSON.stringify(password));
+
   // Basic input validation
   if (!email || !password) {
     return res.status(400).json({ error: 'Email and password are required' });
