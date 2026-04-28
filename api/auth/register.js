@@ -18,10 +18,11 @@ export default async function handler(req, res) {
   }
   body = body || {};
 
-  console.log('DEBUG body type:', typeof req.body, 'parsed:', JSON.stringify(body));
+  const rawEmail = body.email;
+  const rawPassword = body.password;
 
-  const email = typeof body.email === 'string' ? body.email.trim() : '';
-  const password = typeof body.password === 'string' ? body.password : '';
+  const email = typeof rawEmail === 'string' ? rawEmail.trim() : '';
+  const password = typeof rawPassword === 'string' ? rawPassword : '';
 
   if (!email || !password) {
     return res.status(400).json({ error: 'Email and password are required' });
@@ -36,22 +37,28 @@ export default async function handler(req, res) {
   const normalizedEmail = email.toLowerCase();
   const passwordHash = await bcrypt.hash(password, 10);
 
-  const { data, error } = await supabase
+  const result = await supabase
     .from('users')
     .insert({ email: normalizedEmail, password_hash: passwordHash })
     .select('id, email')
     .single();
 
-  if (error) {
-    if (error.code === '23505') {
+  const data = result.data;
+  const dbError = result.error;
+
+  if (dbError) {
+    if (dbError.code === '23505') {
       return res.status(409).json({ error: 'An account with this email already exists' });
     }
-    console.error('Register DB error:', error);
+    console.error('Register DB error:', dbError);
     return res.status(500).json({ error: 'Could not create account' });
   }
 
-  const token = await signJWT({ id: data.id, email: data.email });
+  const userId = data.id;
+  const userEmail = data.email;
+
+  const token = await signJWT({ id: userId, email: userEmail });
   res.setHeader('Set-Cookie', buildSessionCookie(token));
 
-  return res.status(201).json({ user: { id: data.id, email: data.email } });
+  return res.status(201).json({ user: { id: userId, email: userEmail } });
 }
