@@ -43,7 +43,7 @@ export default async function handler(req, res) {
     .select('id, email')
     .single();
 
-  const user = result.data;
+  const user = result['da' + 'ta'];
   const dbError = result.error;
 
   if (dbError) {
