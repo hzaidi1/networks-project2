@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Home from "./pages/Home";
 import Networking from "./pages/Networking";
 
@@ -25,7 +26,8 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/networking" element={<Networking />} />
       </Routes>
-    <Analytics />
+      <Analytics />
+      <SpeedInsights />
     </BrowserRouter>
   );
 }
