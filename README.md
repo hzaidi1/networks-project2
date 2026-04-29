@@ -16,7 +16,7 @@ This project enhances a public website with security, performance, and monitorin
 
 - HTTPS through Vercel hosting
 - XSS protection using `DOMPurify` in the feedback form
-- Security headers configured in [vercel.json](/Users/ashaiman/Desktop/networks-project2/vercel.json)
+- - Security headers configured in [vercel.json](./vercel.json)
   - `Strict-Transport-Security`
   - `Content-Security-Policy`
   - `X-Frame-Options`
