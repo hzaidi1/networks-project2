@@ -70,7 +70,7 @@ export default function Home() {
           <button onClick={handleSubmit} style={{ padding: "8px 16px", borderRadius: "4px", border: "none", background: "#4a90e2", color: "white", cursor: "pointer" }}>
             Submit
           </button>
-          <button onClick={() => setShowRaw(!showRaw)} style={{ padding: "8px 16px", borderRadius: "4px", border: "1px solid #ccc", background: "white", cursor: "pointer" }}>
+          <button onClick={() => setShowRaw(!showRaw)} style={{ padding: "8px 16px", borderRadius: "4px", border: "1px solid #ccc", background: "white", color: "#d24fd971", cursor: "pointer" }}>
             {showRaw ? "Hide" : "Show"} Raw Input (debug)
           </button>
           <button onClick={clearAll} style={{ padding: "8px 16px", borderRadius: "4px", border: "1px solid #d9534f", background: "white", color: "#d9534f", cursor: "pointer" }}>
